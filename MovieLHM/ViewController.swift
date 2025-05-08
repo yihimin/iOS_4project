@@ -27,7 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
             guard let JSONdata = data else { return }
-            print(JSONdata)
+            let dataString = String(data: JSONdata, encoding: .utf8)
+            print(dataString!)
         }
             task.resume()
     }

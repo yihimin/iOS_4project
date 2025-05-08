@@ -10,11 +10,26 @@ let name = ["야당1", "야당2", "야당3", "야당4", "야당5"]
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table : UITableView!
-    
+    let movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=6e3285dc92169992324517f12b2e7027&targetDt=20250507"
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
         table.delegate = self
+        getData()
+    }
+    
+    func getData(){
+        guard let url = URL(string: movieURL) else {return}
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: url) { data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+            guard let JSONdata = data else { return }
+            print(JSONdata)
+        }
+            task.resume()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

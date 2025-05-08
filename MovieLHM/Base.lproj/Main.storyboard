@@ -19,6 +19,35 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uay-Pl-BXK">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="77" id="bwS-je-zTt" customClass="MyTableViewCell" customModule="MovieLHM" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bwS-je-zTt" id="EJz-yp-36P">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0V-pn-unB">
+                                                    <rect key="frame" x="5" y="5" width="383" height="67"/>
+                                                    <color key="backgroundColor" red="0.92671573159999998" green="0.79093146319999996" blue="0.94767165180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="x0V-pn-unB" secondAttribute="bottom" constant="5" id="7Dg-ab-Bpw"/>
+                                                <constraint firstItem="x0V-pn-unB" firstAttribute="top" secondItem="EJz-yp-36P" secondAttribute="top" constant="5" id="9aB-gc-79x"/>
+                                                <constraint firstItem="x0V-pn-unB" firstAttribute="leading" secondItem="EJz-yp-36P" secondAttribute="leading" constant="5" id="I9W-7w-Ze5"/>
+                                                <constraint firstAttribute="trailing" secondItem="x0V-pn-unB" secondAttribute="trailing" constant="5" id="oVh-hj-dMm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="myCell"/>
+                                        <connections>
+                                            <outlet property="movieName" destination="x0V-pn-unB" id="cVM-0m-Vr6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -36,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="-27"/>
+            <point key="canvasLocation" x="0.76335877862595414" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>

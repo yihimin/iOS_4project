@@ -10,7 +10,8 @@ import UIKit
 class MyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var movieName:  UILabel!
-    
+    @IBOutlet weak var audiAccumulate: UILabel!
+    @IBOutlet weak var audiCount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

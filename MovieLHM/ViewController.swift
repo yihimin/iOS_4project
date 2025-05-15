@@ -97,6 +97,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return cell
     }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "🍿박스오피스(영화진흥위원회제공:"+makeYesterdayString()+")🍿"
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

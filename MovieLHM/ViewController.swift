@@ -65,14 +65,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 10
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyTableViewCell
+    //        cell.movieName.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].movieNm
+    //        cell.audiAccumulate.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiAcc
+    //        cell.audiCount.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiCnt
+    //        return cell
+    //    }
+    func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyTableViewCell
-        cell.movieName.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].movieNm
-        cell.audiAccumulate.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiAcc
-        cell.audiCount.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiCnt
+        guard  let mRank = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].rank  else {return  UITableViewCell()}
+        guard  let mName = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].movieNm  else {return UITableViewCell()}
+        cell.movieName.text = "[\(mRank)위] \(mName)"
+        cell.movieName.adjustsFontSizeToFitWidth = true
+        cell.movieName.minimumScaleFactor = 0.5
+        cell.movieName.numberOfLines = 2
+        cell.movieName.lineBreakMode = .byTruncatingTail
+        if let aCnt = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiCnt {
+            let numF = NumberFormatter()
+            numF.numberStyle = .decimal
+            let aCount = Int(aCnt)!
+            let result = numF.string(for: aCount)!+"명"
+            cell.audiCount.text = "어제: \(result)"
+        }
+        if  let aAcc = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiAcc {
+            let numF = NumberFormatter()
+            numF.numberStyle = .decimal
+            let aAcc1 = Int(aAcc)!
+            let result = numF.string(for: aAcc1)!+"명"
+            cell.audiAccumulate.text = "누적: \(result)"
+        }
         return cell
     }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

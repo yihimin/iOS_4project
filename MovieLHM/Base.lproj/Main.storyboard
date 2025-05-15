@@ -68,6 +68,8 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="myCell"/>
                                         <connections>
+                                            <outlet property="audiAccumulate" destination="Ng2-bW-lGR" id="Tjq-6P-keM"/>
+                                            <outlet property="audiCount" destination="tR1-C1-3VK" id="ui5-oc-KWl"/>
                                             <outlet property="movieName" destination="x0V-pn-unB" id="cVM-0m-Vr6"/>
                                         </connections>
                                     </tableViewCell>

@@ -100,6 +100,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "🍿박스오피스(영화진흥위원회제공:"+makeYesterdayString()+")🍿"
     }
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+            return "made by yihimin"
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

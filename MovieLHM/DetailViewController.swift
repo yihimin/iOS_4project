@@ -13,5 +13,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = movieName
+        navigationItem.title = movieName
     }
 }

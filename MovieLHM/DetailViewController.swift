@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailViewController: UIViewController {
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var webView: WKWebView!
     var movieName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = movieName
         navigationItem.title = movieName
+        guard let url = URL(string:"https://m.naver.com") else { return  }
+        let request = URLRequest(url: url)
+        webView.load(request)
     }
 }

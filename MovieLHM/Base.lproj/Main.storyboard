@@ -103,31 +103,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Akz-pP-iCe">
-                                <rect key="frame" x="80" y="183" width="233" height="35"/>
-                                <color key="backgroundColor" red="0.94117653369999998" green="0.9284313917" blue="0.74607843159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNU-WL-EiR">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0nC-aE-dbh"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="0nC-aE-dbh" firstAttribute="bottom" secondItem="Akz-pP-iCe" secondAttribute="bottom" constant="600" id="5GF-EO-GGm"/>
-                            <constraint firstItem="Akz-pP-iCe" firstAttribute="leading" secondItem="0nC-aE-dbh" secondAttribute="leading" constant="80" id="DI2-HQ-35l"/>
-                            <constraint firstItem="Akz-pP-iCe" firstAttribute="top" secondItem="0nC-aE-dbh" secondAttribute="top" constant="80" id="R17-7L-wfe"/>
-                            <constraint firstItem="0nC-aE-dbh" firstAttribute="trailing" secondItem="Akz-pP-iCe" secondAttribute="trailing" constant="80" id="gHX-sc-cd2"/>
+                            <constraint firstItem="XNU-WL-EiR" firstAttribute="leading" secondItem="0nC-aE-dbh" secondAttribute="leading" id="0bA-oF-lrQ"/>
+                            <constraint firstItem="0nC-aE-dbh" firstAttribute="bottom" secondItem="XNU-WL-EiR" secondAttribute="bottom" id="Bi1-ge-kl0"/>
+                            <constraint firstItem="XNU-WL-EiR" firstAttribute="trailing" secondItem="0nC-aE-dbh" secondAttribute="trailing" id="MZ9-xO-46D"/>
+                            <constraint firstItem="XNU-WL-EiR" firstAttribute="top" secondItem="0nC-aE-dbh" secondAttribute="top" id="Pk9-2N-i0j"/>
+                            <constraint firstItem="0nC-aE-dbh" firstAttribute="trailing" secondItem="XNU-WL-EiR" secondAttribute="trailing" id="Xr8-4s-IUL"/>
+                            <constraint firstItem="XNU-WL-EiR" firstAttribute="leading" secondItem="0nC-aE-dbh" secondAttribute="leading" id="cWx-gO-gEf"/>
+                            <constraint firstItem="0nC-aE-dbh" firstAttribute="bottom" secondItem="XNU-WL-EiR" secondAttribute="bottom" id="iuP-Fd-qmA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t9f-8O-aGT"/>
                     <connections>
-                        <outlet property="nameLabel" destination="Akz-pP-iCe" id="f6T-1n-9eh"/>
+                        <outlet property="webView" destination="XNU-WL-EiR" id="gFu-Y9-VSi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRC-3D-mPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338" y="-27"/>
+            <point key="canvasLocation" x="1336.6412213740457" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ryk-xC-V3b">

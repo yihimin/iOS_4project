@@ -74,6 +74,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieData?.boxOfficeResult.dailyBoxOfficeList.count ?? 0
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! DetailViewController
+        let myIndexPath = table.indexPathForSelectedRow!
+        let row = myIndexPath.row
+        dest.movieName = (movieData?.boxOfficeResult.dailyBoxOfficeList[row].movieNm)!
+    }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "🍿 박스오피스 (영화진흥위원회 제공: \(makeYesterdayString())) 🍿"
